@@ -2,6 +2,7 @@ package com.gregoryzuroff.hw1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,8 @@ public class WelcomeScreen extends Activity implements Button.OnClickListener{
         if(view == buttonLogIn){
             if(editTextUsername.getText().toString().equals("ross") && editTextPassword.getText().toString().equals("to426")){
                 Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+                Intent intentWelcome = new Intent(this, HomeScreen.class);
+                this.startActivity(intentWelcome);
             }
             else{
                 Toast.makeText(this, "Access Denied", Toast.LENGTH_SHORT).show();
